@@ -14,13 +14,26 @@
     "deploy": "node --loader ts-node/esm scripts/deploy.ts",
     "get-block": "node --loader ts-node/esm scripts/getBlock.ts",
     "test": "NODE_NO_WARNINGS=1 node --experimental-vm-modules $(yarn bin jest) --no-cache --runInBand --config jest.integration.config.json && aztec test",
-    "update": "aztec update --contract . && ./.github/scripts/update_contract.sh $(grep -oP 'tag\\s*=\\s*\"\\K[^\"]+' \"Nargo.toml\" | head -1) && yarn"
+    "update": "aztec update --contract . && ./.github/scripts/update_contract.sh $(grep -oP 'tag\\s*=\\s*\"\\K[^\"]+' \"Nargo.toml\" | head -1) && yarn",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
   "dependencies": {
     "@aztec/accounts": "0.68.2",
     "@aztec/aztec.js": "0.68.2",
+    "@aztec/circuit-types": "^0.68.2",
+    "@aztec/circuits.js": "^0.68.2",
+    "@aztec/foundation": "^0.68.2",
     "@aztec/noir-contracts.js": "0.68.2",
-    "@types/node": "^22.5.1"
+    "@types/node": "^22.5.1",
+    "react-icons": "^5.0.1",
+    "@types/react": "^18.2.67",
+    "@types/react-dom": "^18.2.22",
+    "next": "^14.1.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "antd": "^5.15.2"
   },
   "devDependencies": {
     "@types/jest": "^29.5.11",
